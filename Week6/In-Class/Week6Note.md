@@ -27,4 +27,7 @@ reading code is from top to the bottom, so it will take the last attribute
 ```
   
 # Week 6 _Class2_2/27/2025
+overflow: hidden;
+- hide the background??
 
+.active 
