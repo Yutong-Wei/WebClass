@@ -1,11 +1,13 @@
 .polaroid{   
+     width: 260px;
     display:inline-block;
-    margin: 30px;
+
     position: relative;
 }
 
 .polaroid:hover{
-    transform: rotate(5deg);
+    transform: matrix(3, 0.3, 0.3, 3, 200, 100) rotate(360deg);
+    transition: transform 1s;
 }
 
 
