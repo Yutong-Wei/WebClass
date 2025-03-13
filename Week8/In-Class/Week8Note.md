@@ -18,3 +18,13 @@ showing different background color when using different media
 
 property for direction  property for wrap.
 eg. `flex-flow: row wrap;`
+
+
+# Week 8_Class 2_3/13/2025
+const:  
+what not change
+prompt:  
+
+$: input from the user  
+
+
