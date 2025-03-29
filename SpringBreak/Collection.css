@@ -1,0 +1,215 @@
+h1{
+    color:rgb(75, 27, 31);
+    text-align: center;
+    font-size: 24px;
+    padding: 36px;
+}
+
+body{
+    background-color: rgb(151, 167, 196);
+    font-family: Comic Sans MS, Comic Sans, cursive;
+}
+
+
+
+
+.label{
+    font-family: Chalkduster, fantasy;
+    color: darkblue;
+    display: flex;
+    margin-top: 36px;
+    margin-bottom: 18px;
+}
+
+
+.topnav{
+    display: flex;
+    justify-content:space-around;
+    background-color:rgb(113, 136, 199);
+    top: 0;
+    z-index: 10;
+    position: sticky;
+    margin-top: 0px;
+}
+
+
+.topnav a{
+    display: flex;
+    text-decoration: none;
+    font-family: Chalkduster, fantasy;
+    color: darkblue;
+    font-size: 16px;
+    padding: 10px;
+}
+
+.topnav a:hover {
+    background-color:rgb(125, 111, 195);
+}
+
+#Week4{
+    scroll-margin-top: 50px;
+}
+
+.Week4{
+    text-align: center;
+    background-color: rgb(231, 193, 193);
+    padding: 30px;
+    color:rgb(60, 25, 25);
+    font-size: 16px;
+}
+
+#Week5{
+    scroll-margin-top: 50px;
+}
+.Week5{
+    text-align: center;
+    background-color: rgb(240, 226, 193);
+    padding: 30px;
+    color:rgb(60, 25, 25);
+    font-size: 16px;
+}
+
+#Week6{
+    scroll-margin-top: 50px;
+}
+
+.Week6{
+    text-align: center;
+    background-color: rgb(138, 205, 167);
+    padding: 30px;
+    color:rgb(60, 25, 25);
+    font-size: 16px;
+}
+
+.box{
+    margin: 10px;
+    background-color: aqua;
+    padding: 30px;
+    position: relative;
+    border: 10px solid darkcyan;
+}
+
+.InnerBox{
+    display: flex;
+    justify-content: center;
+    background-color: antiquewhite;
+    padding: 20px;
+    border: 5px dashed greenyellow;
+    border-radius: 10px;
+}
+
+.InnerBox2{
+    display: flex;
+    justify-content: center;
+    background-color:rgb(196, 245, 255);
+    padding: 60px;
+    border: 20px groove rgb(15, 15, 72);
+    border-radius: 20px;
+}
+
+.position{
+    background-image: linear-gradient(to bottom right,purple, pink);
+    margin: 10px;
+    position: relative;
+    margin-top: 20px;
+    padding: 10px
+}
+
+.static{
+    position: static;
+    background-color:antiquewhite;
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    line-height: 100px;
+}
+
+.sticky{
+        position: sticky;
+        bottom: 0;
+        background-color:antiquewhite;
+        left: 50%;
+        width: 100px;
+        height: 100px;text-align: center;
+        line-height: 100px;
+}
+
+#Week7{
+    scroll-margin-top: 50px;
+}
+
+.Week7{
+    background-color: rgb(217, 193, 155);
+    padding: 30px;
+    font-size: 16px;
+    text-align: center;
+    color:rgb(60, 25, 25);
+}
+
+.container{
+    margin: 20px;
+    display: flex;
+}
+
+.transform{
+    height: 100px;
+    width: 100px;
+    background-color: pink;
+    text-align: center;
+    line-height: 100px;
+    margin: 10px;
+}
+.box1:hover{
+    transform: scale(2);
+}
+
+.box2:hover{
+    transform: scale(0.5)
+}
+
+.box3{
+    width: 200px
+}
+.box3:hover{
+    translate: 400px;
+}
+
+.image_container{
+    height: 200px;
+    width: 100%;
+    position: relative;
+}
+
+.image_container img{
+    width: 100%;
+    height: 100%;
+}
+
+.img_text{
+    position: absolute;
+    top: 50%; 
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(223, 173, 33, 0.3);
+    padding: 10px;
+}
+
+#Week8{
+    scroll-margin-top: 50px;
+}
+
+.Week8{
+    background-color: rgb(203, 203, 203);
+    padding: 30px;
+    font-size: 16px;
+    text-align: center;
+    color:rgb(60, 25, 25);
+}
+
+.Week9{
+    background-color: plum;
+    padding: 30px;
+    font-size: 16px;
+    text-align: center;
+    color:rgb(60, 25, 25);
+}
