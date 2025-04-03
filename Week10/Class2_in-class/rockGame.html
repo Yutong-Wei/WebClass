@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <style>
+
+        </style>
+    </head>
+
+    <body>
+
+        <h1>
+            Simple Rock, Paper, Scissors
+        </h1>
+        <div class="result" id="result">Choose Rock, Paper, or Scissors!</div>
+        <div class="choices">
+            <button class="choice" id="rock">Rock</button>
+            <button class="choice" id="paper">Paper</button>
+            <button class="choice" id="scissors">Scissors</button>
+          </div>
+
+          <button id="reset">Reset Game</button>
+
+
+        <script>
+        const resultDisplay = document.getElementById("result");
+        const resetButton = document.getElementById("reset");
+        
+        document
+        .getElementById("rock")
+        .addEventListener("click", () => playGame("rock"));
+      document
+        .getElementById("paper")
+        .addEventListener("click", () => playGame("paper"));
+      document
+        .getElementById("scissors")
+        .addEventListener("click", () => playGame("scissors"));
+// 
+        resetButton.addEventListener("click", resetGame);
+
+
+        function playGame(playerChoice) {
+        const choices = ["rock", "paper", "scissors"];
+        const computerChoice = choices[Math.floor(Math.random() * 3)];
+
+
+        let result;
+
+        if (playerChoice === computerChoice) {
+          result = "It's a tie!";
+        } else if (
+          (playerChoice === "rock" && computerChoice === "scissors") ||
+          (playerChoice === "paper" && computerChoice === "rock") ||
+          (playerChoice === "scissors" && computerChoice === "paper")
+        ) {
+          result = "You win!";
+        } else {
+          result = "Computer wins!";
+        }
+
+        // Display results
+        resultDisplay.innerHTML = `
+                You chose ${playerChoice}.<br>
+                Computer chose ${computerChoice}.<br>
+                ${result}
+            `;
+      }
+      function resetGame() {
+        resultDisplay.textContent = "Choose Rock, Paper, or Scissors!";
+      }
+        </script>
+    </body>
+
+</html>
