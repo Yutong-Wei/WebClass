@@ -1,0 +1,21 @@
+<html>
+  <head> </head>
+  <body>
+    <div id="grocery"></div>
+    <button id="count">See how many objects in the list</button>
+    <div id="countNumber"></div>
+
+    <script>
+      // array
+      const groceryList = document.getElementById("grocery");
+      const grocery = ["bread", "milk", "apple", "pasta"];
+      groceryList.innerHTML = `grocery list: ${grocery};`;
+
+      // length
+      const countButton = document.getElementById("count");
+      countButton.addEventListener("click", function () {
+        countNumber.innerHTML = `There are ${grocery.length} objects`;
+      });
+    </script>
+  </body>
+</html>
