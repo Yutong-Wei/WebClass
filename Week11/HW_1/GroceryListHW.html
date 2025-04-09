@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>GroceryList</title>
+    <style>
+      body {
+        background-color: rgb(76, 105, 76);
+        font-family: Bradley Hand, cursive;
+      }
+      h1 {
+        text-align: center;
+      }
+      button {
+        background-color: beige;
+        padding: 10px;
+      }
+      button:hover {
+        background-color: orange;
+      }
+
+      #groceryList {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+      }
+      .itemContainer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 20%;
+        margin: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>My Grocery List</h1>
+    <button id="addBtn">Add an Item</button>
+    <button id="deleteBtn">Delete Last Item</button>
+    <button id="resetBtn">Reset List</button>
+    <p id="listLength">Total Items: 0</p>
+    <div id="groceryList"></div>
+
+    <script>
+      const itemArray = [
+        {
+          name: "Apple",
+          image:
+            "https://i.pinimg.com/474x/44/f5/90/44f590924345763aa20da7177b664c29.jpg",
+        },
+        {
+          name: "Lemon",
+          image:
+            "https://i.pinimg.com/474x/55/4d/4f/554d4f38bb543f4fef12f2affa79aa34.jpg",
+        },
+        {
+          name: "Orange",
+          image:
+            "https://i.pinimg.com/474x/0d/ef/4f/0def4fd0c7f935546a3393d0684768ee.jpg",
+        },
+        {
+          name: "Peach",
+          image:
+            "https://i.pinimg.com/474x/65/b6/2e/65b62e4bf07e226d220e75c2ebd78743.jpg",
+        },
+      ];
+      const groceryList = [];
+      const listDiv = document.getElementById("groceryList");
+      document.getElementById(
+        "listLength"
+      ).textContent = `Total Items: ${groceryList.length}`;
+      let currentItemIndex = 0;
+      function addItem() {
+        if (currentItemIndex < itemArray.length) {
+          const newItem = itemArray[currentItemIndex];
+          groceryList.push(newItem);
+          updateListLength();
+          const itemDiv = document.createElement("div");
+          itemDiv.classList.add("itemContainer");
+          itemDiv.innerHTML = `<img src="${newItem.image}" style ="width: 100%"/> <br>${newItem.name}`;
+          listDiv.appendChild(itemDiv);
+          currentItemIndex++;
+        } else {
+          alert("There're no more other choices. Reset the list to start over");
+        }
+      }
+      function deleteItem() {
+        groceryList.pop();
+        updateListLength();
+        listDiv.innerHTML = "";
+        groceryList.forEach((item) => {
+          const itemDiv = document.createElement("div");
+          itemDiv.classList.add("itemContainer");
+          itemDiv.innerHTML = `<img src="${item.image}" style="width:100%"/><br>${item.name}`;
+          listDiv.appendChild(itemDiv);
+        });
+      }
+
+      function resetList() {
+        groceryList.length = 0;
+        currentItemIndex = 0;
+        updateListLength();
+        listDiv.innerHTML = "";
+      }
+
+      function updateListLength() {
+        document.getElementById(
+          "listLength"
+        ).textContent = `Total Items: ${groceryList.length}`;
+      }
+      document.getElementById("addBtn").addEventListener("click", addItem);
+      document
+        .getElementById("deleteBtn")
+        .addEventListener("click", deleteItem);
+      document.getElementById("resetBtn").addEventListener("click", resetList);
+    </script>
+  </body>
+</html>

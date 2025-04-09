@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <title>Arrays: Task 1</title>
+    <style>
+      p {
+        color: purple;
+        margin: 0.5em 0;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+    </style>
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+
+  <body>
+    <section class="preview"></section>
+  </body>
+  <script>
+    // Add your code here
+    //  create an array of three items
+    let myArray = ["apple", "banana", "coconut"];
+    //  modify the first two items in the array using simple bracket notation and assignment
+    myArray[0] = "cherry";
+    myArray[1] = "pear";
+    // add a new item to the beginning of the array.
+    myArray.unshift("orange");
+    // Don't edit the code below here!
+
+    const section = document.querySelector("section");
+
+    let para1 = document.createElement("p");
+    para1.textContent = `Array: ${myArray}`;
+
+    section.appendChild(para1);
+  </script>
+</html>
