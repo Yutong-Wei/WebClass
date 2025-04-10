@@ -1,0 +1,91 @@
+<!-- mood-changer-template.html -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Mood Changer</title>
+    <style>
+      body {
+        text-align: center;
+        padding: 2rem;
+        font-family: sans-serif;
+        background-color: #f0f0f0;
+      }
+      #moodImg {
+        width: 200px;
+        height: 200px;
+        object-fit: contain;
+        margin-top: 1rem;
+      }
+      input,
+      button {
+        font-size: 1.2rem;
+        padding: 0.5rem;
+        margin: 0.5rem;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Mood Changer 😎</h1>
+
+    <input
+      type="number"
+      id="moodInput"
+      min="0"
+      max="4"
+      placeholder="Enter a number (0–4)"
+    />
+
+    <button id="setMoodBtn">Set Mood</button>
+
+    <h2 id="moodMessage">How are you feeling?</h2>
+    <img id="moodImg" src="Question.jpg" alt="Mood face" />
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const button = document.getElementById("setMoodBtn");
+        button.addEventListener("click", changeMood);
+      });
+
+      function changeMood() {
+        // Get input value
+        let input = document.getElementById("moodInput").value;
+        let n = parseInt(input);
+
+        // Get DOM elements
+        const message = document.getElementById("moodMessage");
+        const img = document.getElementById("moodImg");
+
+        // TODO: Replace with real switch logic!
+        switch (n) {
+          case 0:
+            message.textContent = "Feeling Great!";
+            img.src = "happy.png";
+            document.body.style.backgroundColor = "#73eb8d";
+            break;
+          // Add other cases here!
+          case 1:
+            message.textContent = "Just Okay.";
+            img.src = "okay.png";
+            document.body.style.backgroundColor = "#e3e3e3";
+            break;
+          case 2:
+            message.textContent = "Kinda sad.";
+            img.src = "sad.png";
+            document.body.style.backgroundColor = "#cfe6ff";
+            break;
+          case 3:
+            message.textContent = "Angry";
+            img.src = "angry.png";
+            document.body.style.backgroundColor = "#f04f43";
+            break;
+          case 4:
+            message.textContent = "So sleepy...";
+            img.src = "sleepy.png";
+            document.body.style.backgroundColor = "#e4d9ff";
+            break;
+        }
+      }
+    </script>
+  </body>
+</html>
