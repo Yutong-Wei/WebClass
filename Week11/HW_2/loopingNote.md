@@ -77,3 +77,12 @@ instead of breaking out of the loop, **continue** statement skips the next itera
 ### while and do...while
 
 similar to for loop, but initializer comes first before the loop starts.
+
+```
+initializer
+do {
+  // code to run
+
+  final-expression
+} while (condition)
+```
