@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>API practice Colormind</title>
+    <style>
+      #paletteContainer {
+        display: flex;
+        margin-top: 20px;
+        gap: 10px;
+        justify-content: center;
+      }
+
+      #paletteContainer div {
+        width: 60px;
+        height: 60px;
+        border-radius: 8px;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+      }
+      .buttons {
+        display: flex;
+        justify-content: center;
+      }
+      button {
+        color: white;
+        font-family: Marker Felt, fantasy;
+        font-size: 36px;
+        margin: 20px;
+      }
+      button#spring {
+        background-color: rgb(227, 127, 159);
+      }
+      button#winter {
+        background-color: rgb(8, 29, 99);
+      }
+      p {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="buttons">
+      <button id="spring" onclick="generatePalette('spring')">Spring</button>
+      <button id="winter" onclick="generatePalette('winter')">Winter</button>
+    </div>
+    <div id="paletteContainer"></div>
+    <p>
+      Click buttons to generate a color palette.<br />
+      Click again to generate a new color palette.
+    </p>
+    <script>
+      // used AI to understand how the Colormind API works,
+      // but I now understand all of my codes
+      function generatePalette(emotion) {
+        var inputColors;
+        if (emotion === "spring") {
+          inputColors = [[227, 127, 159], "N", "N", "N", "N"];
+        } else if (emotion === "winter") {
+          inputColors = [[8, 29, 99], "N", "N", "N", "N"];
+        }
+
+        var url = "http://colormind.io/api/";
+        var data = {
+          model: "default",
+          input: inputColors,
+        };
+
+        var http = new XMLHttpRequest();
+        http.onreadystatechange = function () {
+          if (http.readyState == 4 && http.status == 200) {
+            var palette = JSON.parse(http.responseText).result;
+            displayPalette(palette);
+          }
+        };
+
+        http.open("POST", url, true);
+        http.send(JSON.stringify(data));
+      }
+
+      function displayPalette(palette) {
+        var container = document.getElementById("paletteContainer");
+        container.innerHTML = "";
+        palette.forEach(function (color) {
+          var colorDiv = document.createElement("div");
+          colorDiv.style.backgroundColor = "rgb(" + color.join(",") + ")";
+          container.appendChild(colorDiv);
+        });
+      }
+    </script>
+  </body>
+</html>
